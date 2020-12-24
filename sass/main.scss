@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap");
+@import "variables";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body,
+html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden !important;
+}
+
+@keyframes snowdrop {
+	0% {
+		transform: translateY(0);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(2000%);
+		opacity: 1;
+	}
+}
+
+.container {
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient(180deg, $bg1-color, $bg2-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	snow {
+		position: absolute;
+		background: $snow-color;
+		border-radius: 100%;
+		animation: snowdrop linear infinite;
+		&:nth-child(odd) {
+			background: transparent;
+			border: 1px solid $snow-color;
+		}
+	}
+	.box {
+		background-color: rgba(255, 255, 255, 0.2);
+		border-radius: 20px;
+		backdrop-filter: blur(100px);
+		-webkit-backdrop-filter: blur(100px);
+		padding: 2rem;
+		.title {
+			font-family: "Pacifico", cursive;
+			font-size: $title;
+			color: $txt-color;
+			margin-bottom: 1rem;
+		}
+		.snowing {
+			font-family: "Montserrat", sans-serif;
+			font-size: $content;
+			color: $txt-color;
+			cursor: pointer;
+			margin-bottom: 1rem;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		#copyright {
+			display: none;
+			font-family: "Montserrat", sans-serif;
+			color: $txt-color;
+			font-size: $content;
+			transition: display ease 3s;
+			a {
+				text-decoration: none;
+				color: $txt-color;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

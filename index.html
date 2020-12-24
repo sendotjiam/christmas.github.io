@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.css" />
+		<title>Merry Christmas</title>
+	</head>
+	<body>
+		<section class="container">
+			<div class="box">
+				<h2 class="title">Merry Christmas</h2>
+				<div id="snow" class="snowing">
+					<span id="snowBtn" onclick="snowDrop()"
+						>Let the Snow Rain on You.</span
+					>
+					<small>(click me)</small>
+				</div>
+				<p id="copyright">
+					Create with &hearts; by
+					<a href="https://github.com/zxOrton">Sendo Tjiamis</a>
+				</p>
+			</div>
+		</section>
+		<script>
+			let check = false;
+			const snowContainer = document.getElementById("snow");
+			const copyright = document.getElementById("copyright");
+			snowDrop = () => {
+				if (!check) {
+					let count = 200;
+					let container = document.querySelector(".container");
+					let i = 0;
+					while (i < count) {
+						const snow = document.createElement("snow");
+						const posX = Math.floor(Math.random() * window.innerWidth);
+						const posY = Math.floor(Math.random() * window.innerHeight);
+
+						const size = Math.random() * 10;
+						snow.style.left = posX + "px";
+						snow.style.top = posY + "px";
+
+						snow.style.width = 1 + size + "px";
+						snow.style.height = 1 + size + "px";
+
+						snow.style.animationDuration = 5 + size + "s";
+						container.appendChild(snow);
+						i++;
+					}
+				}
+				check = true;
+				if (check) {
+					snowContainer.style.display = "none";
+					copyright.style.display = "block";
+				}
+			};
+		</script>
+	</body>
+</html>

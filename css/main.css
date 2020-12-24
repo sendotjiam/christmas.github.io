@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+@-webkit-keyframes snowdrop {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(2000%);
+            transform: translateY(2000%);
+    opacity: 1;
+  }
+}
+
+@keyframes snowdrop {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(2000%);
+            transform: translateY(2000%);
+    opacity: 1;
+  }
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b31315), to(#fa585b));
+  background: linear-gradient(180deg, #b31315, #fa585b);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.container snow {
+  position: absolute;
+  background: #fff;
+  border-radius: 100%;
+  -webkit-animation: snowdrop linear infinite;
+          animation: snowdrop linear infinite;
+}
+
+.container snow:nth-child(odd) {
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+.container .box {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  padding: 2rem;
+}
+
+.container .box .title {
+  font-family: "Pacifico", cursive;
+  font-size: 58px;
+  color: #f1f1f1;
+  margin-bottom: 1rem;
+}
+
+.container .box .snowing {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #f1f1f1;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.container .box .snowing:hover {
+  text-decoration: underline;
+}
+
+.container .box #copyright {
+  display: none;
+  font-family: "Montserrat", sans-serif;
+  color: #f1f1f1;
+  font-size: 16px;
+  -webkit-transition: display ease 3s;
+  transition: display ease 3s;
+}
+
+.container .box #copyright a {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+.container .box #copyright a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=main.css.map */
